@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" _xmlns:android="http://schemas.android.com/apk/res/android" xmlns:_xmlns="xmlns"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <android.support.v7.widget.RecyclerView android:id="@id/drawer_results" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <android.support.v7.widget.RecyclerView android:id="@id/drawer_results" android:background="@color/primary_background" android:layout_width="fill_parent" android:layout_height="wrap_content" />
     <ImageView android:id="@id/drawer_shadow" android:layout_width="fill_parent" android:layout_height="@dimen/section_list_drawer_elevation" android:src="@drawable/drawer_shadow" android:importantForAccessibility="no" />
 </LinearLayout>
