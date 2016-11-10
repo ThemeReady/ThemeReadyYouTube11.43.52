@@ -1,0 +1,15 @@
+.class public final Lcfr;
+.super Llzg;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 35
+    invoke-direct {p0}, Llzg;-><init>()V
+
+    return-void
+.end method

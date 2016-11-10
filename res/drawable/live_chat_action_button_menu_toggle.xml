@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="?defaultItemSelector" />
+    <item android:left="2.0dip" android:top="2.0dip" android:right="2.0dip" android:bottom="2.0dip">
+        <selector>
+            <item android:state_selected="true">
+                <shape android:shape="oval">
+                    <solid android:color="#ff3d3d3d" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+    <item android:gravity="center" android:id="@id/icon" android:height="24.0dip" android:width="24.0dip" android:drawable="@drawable/quantum_ic_more_vert_grey600_24" />
+</layer-list>

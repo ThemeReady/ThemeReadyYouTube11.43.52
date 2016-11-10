@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.youtube" platformBuildVersionCode="24" platformBuildVersionName="N">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID_NOTIFICATION"/>
+    <uses-permission android:name="com.google.android.youtube.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission-sdk-23 android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <permission android:name="com.google.android.youtube.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:backupAgent="com.google.android.apps.youtube.app.application.backup.AutoBackupAgent" android:fullBackupContent="@xml/backup_scheme" android:fullBackupOnly="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/application_name" android:largeHeap="true" android:logo="@drawable/action_bar_logo_release" android:name="com.google.android.apps.youtube.app.YouTubeApplication" android:supportsRtl="@bool/supports_rtl" android:theme="@style/Theme.YouTube.Light">
+        <meta-data android:name="to.dualscreen" android:value="true"/>
+        <meta-data android:name="com.google.android.apps.youtube.config.BuildType" android:value="RELEASE"/>
+        <activity android:configChanges="keyboardHidden|screenSize" android:launchMode="singleTask" android:name="com.google.android.apps.youtube.app.honeycomb.phone.NewVersionAvailableActivity"/>
+        <activity android:exported="true" android:name="com.google.android.apps.youtube.app.honeycomb.Shell$HomeActivity" android:theme="@style/Theme.YouTube.Launcher"/>
+        <activity android:name="com.google.android.libraries.youtube.player.features.gl.vr.VrWelcomeActivity" android:theme="@style/Theme.YouTube.Promo"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" android:launchMode="singleTask" android:name="com.google.android.apps.youtube.app.WatchWhileActivity" android:theme="@style/Theme.YouTube.Home" android:windowSoftInputMode="adjustResize">
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.CLOSE_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.FULL_SCREEN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.MINI_SCREEN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.NORMAL_SCREEN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.PAUSE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.PLAY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.STOP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.NEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.PREVIOUS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.SKIP_ADS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.mdx.voice.CONNECT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.mdx.voice.DISCONNECT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.voice.PLAY_NTH_VIDEO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.google.android.apps.youtube.app.honeycomb.Shell$ResultsActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.MEDIA_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name="com.google.android.apps.youtube.app.honeycomb.Shell$UploadActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="com.google.android.youtube.intent.action.UPLOAD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/upload_edit_video_title" android:name="com.google.android.apps.youtube.app.honeycomb.phone.UploadActivity" android:theme="@style/Theme.YouTube.UploadActivity" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.google.android.youtube.intent.action.INTERNAL_UPLOAD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/edit_video_form_title" android:name="com.google.android.apps.youtube.app.honeycomb.phone.EditVideoActivity" android:theme="@style/Theme.YouTube.EditVideoActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.google.android.apps.youtube.app.honeycomb.phone.ScreenPairingActivity" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="remote"/>
+                <data android:host="youtube.com"/>
+                <data android:host="www.youtube.com"/>
+                <data android:host="m.youtube.com"/>
+                <data android:pathPrefix="/remote"/>
+                <data android:pathPrefix="/ytremote"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden" android:name="com.google.android.apps.youtube.app.honeycomb.phone.ScreenManagementActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:exported="true" android:name="com.google.android.apps.youtube.app.honeycomb.Shell$UrlActivity" android:theme="@style/Theme.YouTube.Launcher"/>
+        <activity android:name="com.google.android.apps.youtube.app.honeycomb.Shell$MediaSearchActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden" android:label="@string/settings" android:name="com.google.android.apps.youtube.app.settings.SettingsActivity" android:theme="@style/Theme.YouTube.Settings"/>
+        <activity android:name="com.google.android.apps.youtube.app.honeycomb.Shell$SettingsActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.NOTIFICATION_PREFERENCES"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="android.app.default_searchable" android:value="com.google.android.apps.youtube.app.honeycomb.Shell$ResultsActivity"/>
+        <service android:exported="true" android:name="com.google.android.libraries.youtube.common.gcore.gcoreclient.gcm.impl.GcmTaskServiceDelegator" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <meta-data android:name="gcoreclient.gcm.GcoreGcmTaskService" android:value="com.google.android.libraries.youtube.net.gcm.service.YouTubeGcmTaskService"/>
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.google.android.libraries.youtube.offline.transfer.service.OfflineTransferService"/>
+        <receiver android:enabled="false" android:name="com.google.android.libraries.youtube.offline.transfer.service.OfflineTransferService$DeviceStateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.apps.youtube.app.system.LocaleUpdatedService"/>
+        <receiver android:name="com.google.android.apps.youtube.app.system.LocaleUpdatedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.libraries.youtube.player.background.service.BackgroundPlayerService"/>
+        <service android:exported="false" android:name="com.google.android.libraries.youtube.mdx.mediaroute.RemotePlaybackControlsService"/>
+        <receiver android:exported="true" android:name="com.google.android.libraries.youtube.player.PlayerUiModule$LegacyMediaButtonIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.google.android.apps.youtube.app.honeycomb.LogCollectorActivity">
+            <intent-filter>
+                <action android:name="com.google.android.youtube.action.bugreport"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.google.android.libraries.youtube.edit.camera.CameraActivity" android:screenOrientation="portrait" android:theme="@style/Theme.YouTube.CameraActivity"/>
+        <activity android:label="@string/gallery_activity_title" android:name="com.google.android.libraries.youtube.edit.gallery.GalleryActivity" android:theme="@style/Theme.YouTube.GalleryActivity"/>
+        <activity android:name="com.google.android.libraries.youtube.account.photo.CropActivity" android:theme="@style/Theme.YouTube.CropActivity"/>
+        <activity android:label="@string/upload_edit_audio_swap_audio_selection_title" android:name="com.google.android.libraries.youtube.edit.audioswap.ui.AudioSelectionActivity" android:theme="@style/Theme.YouTube.AudioSelection"/>
+        <activity android:name="com.google.android.libraries.youtube.comment.image.ImageGalleryActivity" android:theme="@style/Theme.YouTube.GalleryActivity"/>
+        <receiver android:exported="true" android:name="com.google.android.apps.youtube.app.common.notification.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.google.android.youtube"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.google.android.youtube.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.google.android.apps.youtube.app.common.util.FileProviderCompat">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_provider_exported_paths"/>
+        </provider>
+        <service android:name="com.google.android.apps.youtube.app.ads.AdIdListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.ads.identifier.BIND_LISTENER"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.google.android.apps.youtube.app.PackageReplacedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/api_standalone_player_activity_name" android:name="com.google.android.youtube.api.StandalonePlayerActivity" android:permission="android.permission.INTERNET" android:process="com.google.android.youtube.player" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="com.google.android.youtube.api.StandalonePlayerActivity.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="true" android:label="@string/api_service_name" android:name="com.google.android.youtube.api.service.YouTubeService" android:permission="android.permission.INTERNET" android:process="com.google.android.youtube.player">
+            <intent-filter>
+                <action android:name="com.google.android.youtube.api.service.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.google.android.libraries.youtube.account.AccountsChangedReceiver">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.libraries.youtube.account.AccountsChangedService"/>
+        <service android:name="com.google.android.libraries.youtube.notification.NotificationProcessingService"/>
+        <service android:name="com.google.android.libraries.youtube.notification.NotificationService"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:name="com.google.android.moxie.common.MoxieActivity" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="com.google.android.spotlightstories.PLAY_STORY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:configChanges="orientation" android:exported="false" android:name="com.google.android.moxie.common.MoxieService">
+            <intent-filter>
+                <action android:name="com.google.android.spotlightstories.CONNECT_PLAYER"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIXi58ScnYbhPAPl8s4DjDkSik7XGKNcn8YqfZFg"/>
+        <meta-data android:name="com.google.android.apps.youtube.app.common.image.GlideLoaderModule" android:value="GlideModule"/>
+        <receiver android:name="com.google.android.libraries.youtube.upload.service.UploadService$BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.apps.youtube.app.common.upload.MainAppUploadService"/>
+        <provider android:authorities="com.google.android.youtube.SuggestionProvider" android:exported="false" android:name="com.google.android.apps.youtube.app.search.suggest.YouTubeSuggestionProvider"/>
+        <service android:enabled="false" android:exported="false" android:name="com.google.android.libraries.social.licenses.MetadataHolder">
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.GL" android:value="7:30135"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.OpenCV" android:value="30153:1946"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.OpenCVX" android:value="32111:2224"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Xorg" android:value="34344:47018"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.ares" android:value="81371:694"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.binaural" android:value="82078:1481"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Boost" android:value="83569:1338"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Brotli" android:value="84918:1084"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.bzip2" android:value="86012:1901"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.curl" android:value="87922:1044"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.DynamicAnnotations" android:value="88989:1484"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Eigen 3" android:value="90485:85392"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.freebsd" android:value="175889:1870"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.giflib" android:value="177770:1088"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Closure Compiler" android:value="178879:10173"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Closure Library" android:value="189072:10173"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.googleurl" android:value="199259:4959"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.GRTE" android:value="204227:26536"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Halide" android:value="230774:1124"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.ICU4C" android:value="231908:11769"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Annotations Support Library" android:value="243717:10695"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Custom Tabs Support Library" android:value="254452:10695"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Design Support Library" android:value="265182:10695"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Multidex Support Library" android:value="275914:10695"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Transition Support Library" android:value="286648:10691"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Compatibility Library v4" android:value="297376:10695"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Compatibility Library v7" android:value="308108:10695"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android Support Tools" android:value="318829:10220"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Android SDK" android:value="329065:16013"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.android_transcoder" android:value="345101:11357"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.aosp_httpclient_mods" android:value="356483:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Cronet" android:value="367852:27647"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.customtabsclient" android:value="395520:10141"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.ExoPlayer" android:value="405675:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Glide" android:value="417043:4771"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Guava JDK5" android:value="421829:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.LeakCanary" android:value="433202:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.mp4parser" android:value="444574:12834"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Protobuf Nano" android:value="457426:1732"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.AOSP rastermill" android:value="459178:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.RxAndroid" android:value="470550:11344"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.swipedismiss" android:value="481911:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.AOSP Volley" android:value="493285:11362"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Apache HttpClient" android:value="504669:10173"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Apache HttpCore" android:value="514862:10173"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Google Auto" android:value="525051:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Checker Framework" android:value="536431:22655"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Dagger" android:value="559097:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Error Prone" android:value="570471:11357"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.J2ObjC" android:value="581839:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Apache Commons Codec" android:value="593222:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Apache Commons Logging" android:value="604607:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.JSR 250" android:value="615977:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.JSR 305" android:value="627347:1602"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.JSR 330" android:value="628961:11365"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.jtransforms" android:value="640342:25754"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.nanohttpd" android:value="666110:1549"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.RxJava" android:value="667670:11344"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.LeakCanary No-op" android:value="679035:11357"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Mobile Filter Framework" android:value="690420:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Guava JDK7" android:value="701793:11362"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.jquery2" android:value="713167:1606"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.jquery_ui" android:value="714787:1107"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.tracing_framework" android:value="715916:1475"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.libjpeg" android:value="717403:4276"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.lapack" android:value="721690:2266"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.libcap" android:value="723967:20240"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.libjpeg-turbo" android:value="744225:5545"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.libogg" android:value="749781:1466"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.XCB library" android:value="751263:1337"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Libxml2" android:value="752612:5416"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.libxsmm" android:value="758040:4508"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.libyuv" android:value="762559:1506"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.libzip" android:value="764076:1452"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.lodepng" android:value="765540:890"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.luajit" android:value="766441:2932"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.lz4" android:value="769381:1310"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.minizip" android:value="770703:1996"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.mongoose" android:value="772712:1062"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.google_toolbox_for_mac" android:value="773801:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.gtm_session_fetcher" android:value="785183:11358"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.openctm" android:value="796553:881"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.BoringSSL" android:value="797448:9287"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.PCRE" android:value="806744:3182"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.pffft" android:value="809936:1919"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.png" android:value="811863:4155"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.Protocol Buffers" android:value="816039:1732"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.RE2" android:value="817779:1558"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.speex" android:value="819347:1449"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.stblib" android:value="820807:201"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.STL" android:value="821016:680"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.tiff" android:value="821705:1200"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.tinyxml2" android:value="822918:808"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.tinyxml" android:value="823738:925"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.tremor" android:value="824674:1465"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.tz database" android:value="826155:243"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.UTF" android:value="826406:731"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.zippy" android:value="827147:2655"/>
+            <meta-data android:name="com.google.android.libraries.social.licenses.LICENSE.zlib" android:value="829811:2500"/>
+        </service>
+        <activity android:exported="true" android:label="@string/preferences_license_title" android:name="com.google.android.libraries.social.licenses.LicenseMenuActivity" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:exported="false" android:label="@string/preferences_license_title" android:name="com.google.android.libraries.social.licenses.LicenseActivity" android:theme="@style/Theme.AppCompat.Light"/>
+        <service android:exported="false" android:name="com.google.android.libraries.social.silentfeedback.nobinder.SilentFeedbackService" android:process=":crash_report"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.google.android.libraries.youtube.livecreation.ui.LiveCreationActivity" android:theme="@style/LcAppTheme.NoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:name="com.google.android.libraries.youtube.mdx.smartpairing.PairWithTvActivity" android:theme="@style/Mdx.Theme.Settings"/>
+        <activity android:excludeFromRecents="true" android:name="com.google.android.libraries.youtube.player.features.pauseandbuffer.PauseAndBufferNotificationIntentBroadcastingActivity" android:taskAffinity=""/>
+        <service android:exported="false" android:name="com.google.android.libraries.youtube.player.features.pauseandbuffer.PauseAndBufferTaskService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity-alias android:name="com.google.android.youtube.app.honeycomb.Shell$HomeActivity" android:targetActivity="com.google.android.apps.youtube.app.honeycomb.Shell$HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.action.open.search"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.action.open.trending"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.youtube.action.open.subscriptions"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:exported="true" android:name="com.google.android.youtube.HomeActivity" android:targetActivity="com.google.android.apps.youtube.app.honeycomb.Shell$HomeActivity"/>
+        <activity-alias android:name="com.google.android.youtube.UploadIntentHandlingActivity" android:targetActivity="com.google.android.apps.youtube.app.honeycomb.Shell$UploadActivity">
+            <intent-filter android:label="@string/application_name">
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name="com.google.android.youtube.UrlActivity" android:targetActivity="com.google.android.apps.youtube.app.honeycomb.Shell$UrlActivity" android:theme="@style/Theme.YouTube.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="youtube.com"/>
+                <data android:host="www.youtube.com"/>
+                <data android:host="m.youtube.com"/>
+                <data android:host="youtu.be"/>
+                <data android:pathPattern=".*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="vnd.youtube"/>
+                <data android:scheme="vnd.youtube.launch"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:label="@string/settings" android:name="com.google.android.youtube.ManageNetworkUsageActivity" android:targetActivity="com.google.android.apps.youtube.app.honeycomb.Shell$SettingsActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+    </application>
+    <compatible-screens>
+        <screen android:screenDensity="xxhdpi" android:screenSize="small"/>
+        <screen android:screenDensity="xxhdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="xxhdpi" android:screenSize="large"/>
+        <screen android:screenDensity="xxhdpi" android:screenSize="xlarge"/>
+    </compatible-screens>
+</manifest>

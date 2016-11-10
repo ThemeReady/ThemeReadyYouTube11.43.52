@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" _xmlns:android="http://schemas.android.com/apk/res/android" _xmlns:tools="http://schemas.android.com/tools" xmlns:_xmlns="xmlns"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/mobile_data_plan_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" />
+    <Button android:layout_gravity="center_horizontal" android:id="@id/mobile_data_plan_update_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="Update mobile data plan info" />
+    <Button android:layout_gravity="center_horizontal" android:id="@id/mobile_data_plan_refresh_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="Refresh" />
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/mobile_data_plan_debug_log" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:maxLines="500" />
+</LinearLayout>

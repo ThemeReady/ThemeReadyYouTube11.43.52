@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:tag="@string/upload_details" android:layout_width="fill_parent" android:layout_height="fill_parent" _xmlns:android="http://schemas.android.com/apk/res/android" xmlns:_xmlns="xmlns"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/video_edit_fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/upload_active_account_header_view" />
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/upload_form_details" />
+    </LinearLayout>
+    <ScrollView android:id="@id/scroll_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+</merge>
